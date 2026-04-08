@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personnel Login | WarWatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="sticky-header">
+            <div class="logo-area"><h1>WarWatch</h1></div>
+            <nav class="main-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="map.html">Impact Map</a>
+                <a href="about.html">About Us</a>
+                <a href="login.html" class="active nav-right">Personnel Login</a>
+            </nav>
+        </header>
+
+        <main class="content-area" style="text-align: center;">
+            <h2 class="section-title">Authorized Personnel Forum Access</h2>
+            
+            <div class="report-box" style="max-width: 450px; margin: 40px auto;">
+                <!-- This form submits data to our PHP script -->
+                <form action="login_action.php" method="POST">
+                    <div style="margin-bottom: 20px; text-align: left;">
+                        <label for="username" style="font-weight: bold; font-family: 'Libre Baskerville', serif;">Username:</label>
+                        <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 25px; text-align: left;">
+                        <label for="password" style="font-weight: bold; font-family: 'Libre Baskerville', serif;">Password:</label>
+                        <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <button type="submit" style="background: #152e4d; color: white; padding: 12px 25px; border: none; cursor: pointer; width: 100%; font-size: 16px; font-family: 'Libre Baskerville', serif;">LOGIN</button>
+                </form>
+                <div style="margin-top: 20px;">
+                    <p>Don't have an account? <a href="signup.html" style="color: #8b0000; font-weight: bold;">Sign Up Here</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

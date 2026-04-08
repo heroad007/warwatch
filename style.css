@@ -1,0 +1,273 @@
+/* ==========================================================================
+   WarWatch - Complete Full-Width Stylesheet
+   ========================================================================== */
+
+/* --- Global & Typography (Full-Width Style) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #ffffff; /* Body is now the main white background */
+    color: #222;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #152e4d; /* Deep Navy */
+}
+
+/* --- Page Wrapper (Now just a structural container) --- */
+.page-wrapper {
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* --- Sticky Header (Full-Width Style) --- */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #8b0000;
+    border-top: 5px solid #152e4d;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 0 5%; /* ADDED PADDING to keep content off the edges */
+}
+
+.logo-area {
+    padding: 15px 0; /* Removed side padding */
+}
+
+.logo-area h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-nav {
+    display: flex;
+    background-color: #152e4d;
+    height: 100%;
+}
+
+.main-nav a {
+    color: #ffffff;
+    padding: 25px 20px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-left: 1px solid #2a4768;
+    transition: background 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: #2a4768;
+}
+
+/* --- Main Content --- */
+.content-area {
+    padding: 40px 5%; /* Use percentage for responsive side padding */
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 40px 0;
+}
+
+.section-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #152e4d;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+/* --- 1. Revolving Globe (Pure CSS 3D Trick) --- */
+/* --- 1. Vanta.js Interactive Globe Section --- */
+.vanta-globe-section {
+    width: 100%;
+    height: 450px; /* Makes the globe area large and impressive */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 4px solid #8b0000; /* Dark red border to separate from white content below */
+    overflow: hidden; /* Prevents scrollbars from 3D canvas */
+}
+
+/* Keeps the text perfectly centered on top of the globe */
+.vanta-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    pointer-events: none; /* Lets the user click/drag the globe through the text */
+}
+.globe-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Earth texture map */
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Solarsystemscope_texture_8k_earth_daymap.jpg/1024px-Solarsystemscope_texture_8k_earth_daymap.jpg');
+    background-size: cover;
+    /* Shadows create the 3D sphere illusion */
+    box-shadow: inset -20px 0 40px rgba(0,0,0,0.8), inset 10px 0 20px rgba(255,255,255,0.4), 0 0 20px rgba(0,0,0,0.2);
+    /* Animation definition */
+    animation: spinGlobe 15s linear infinite;
+}
+
+/* The CSS animation that makes the background rotate */
+@keyframes spinGlobe {
+    0% { background-position: 0 0; }
+    100% { background-position: 1024px 0; }
+}
+
+/* --- 2. Major Ongoing Wars Grid --- */
+.ongoing-wars-section {
+    max-width: 1200px; /* Optional: Keep this section from getting too wide on huge screens */
+    margin: 0 auto; /* Center the grid container */
+}
+.wars-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.war-card {
+    text-align: center;
+    width: 300px; /* Fixed width for each card */
+    margin-bottom: 20px;
+}
+
+.war-map-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    border: 3px solid #152e4d;
+    background-size: cover;
+    background-position: center;
+}
+
+.war-dropdown-btn {
+    background: #152e4d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.war-menu {
+    list-style: none;
+    text-align: left;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    /* Hidden by default, toggled via JS */
+    display: none; 
+}
+
+.war-menu li { margin-bottom: 8px; }
+.war-menu a { color: #8b0000; font-size: 13px; font-weight: bold; text-decoration: none; }
+.war-menu a:hover { text-decoration: underline; }
+
+/* --- 3. Statistics Data Bar --- */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid #152e4d;
+    border-bottom: 2px solid #152e4d;
+    background-color: #f4f4f4;
+    margin: 40px 0;
+}
+
+.stat-box {
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+.stat-box:last-child { border-right: none; }
+
+.stat-box h4 {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b0000;
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* --- 4 & 5. Info Boxes (News & About) --- */
+.report-box {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    max-width: 1200px; /* Optional: Keep this section from getting too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.news-list { list-style: none; }
+.news-list li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+.news-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.about-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* --- Forum Page Specific Styles --- */
+.chat-container { border: 1px solid #ccc; height: 400px; overflow-y: auto; padding: 15px; background: #f9f9f9; margin-bottom: 20px; }
+.chat-message { margin-bottom: 15px; border-bottom: 1px dotted #ddd; padding-bottom: 10px; }
+.chat-message .user { font-weight: bold; color: #152e4d; }
+.chat-message .time { font-size: 11px; color: #777; margin-left: 10px; }
+.chat-message .text { margin-top: 5px; }
+
+/* --- Map Page Specific Styles --- */
+#conflictMap {
+    height: 600px;
+    width: 100%;
+    border: 2px solid #152e4d;
+    margin-top: 20px;
+}
+.map-description {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #444;
+}
