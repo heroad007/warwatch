@@ -38,12 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['message'])) {
     <div class="page-wrapper">
         <header class="sticky-header">
             <div class="logo-area"><h1>WarWatch</h1></div>
-            <nav class="main-nav">
-                <a href="index.html">Dashboard</a>
-                <a href="map.html">Impact Map</a>
-                <a href="forum.php" class="active">Public Forum</a>
-                <a href="logout.php" class="nav-right" style="background-color:#8b0000;">Logout (<?php echo htmlspecialchars($_SESSION['logged_in_user']); ?>)</a>
-            </nav>
+            <!-- Inside forum.php header -->
+<nav class="main-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="news.html">News Headlines</a>
+    <a href="map.html">Impact Map</a>
+    <a href="forum.php" class="active">Public Forum</a>
+    <a href="about.html">About Us</a>
+    <!-- Show Logout if logged in -->
+    <a href="logout.php" class="nav-right" style="background-color: #8b0000;">Log Out</a>
+</nav>
         </header>
 
         <main class="content-area">

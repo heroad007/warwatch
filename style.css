@@ -9,16 +9,46 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Open Sans', Arial, sans-serif;
-    background-color: #ffffff; /* Body is now the main white background */
-    color: #222;
-    line-height: 1.6;
+/* --- Global Vanta Background --- */
+#vanta-bg-global {
+    position: fixed; /* Locks it to the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Puts it BEHIND all your content */
 }
 
+body {
+    background-color: transparent; /* Allows the waves to show through */
+}
+
+/* Make the content area look like a modern "Glass Card" floating over the waves */
+/* --- Main Content (Transparent to show waves) --- */
+.content-area {
+    background-color: transparent; /* REMOVED the white background */
+    padding: 40px 5%; 
+    max-width: 1300px;
+    margin: 0 auto; 
+    box-shadow: none; /* Removed the shadow */
+    color: #ffffff; /* Make general text white */
+}
+
+/* Make headers white so they are readable on dark waves */
+.content-area h2, 
+.content-area h3, 
+.content-area h4 {
+    color: #ffffff; 
+    border-bottom-color: rgba(255, 255, 255, 0.3); /* Lighter border lines */
+}
+
+.section-title {
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
 h1, h2, h3, h4 {
     font-family: 'Libre Baskerville', Georgia, serif;
-    color: #152e4d; /* Deep Navy */
+    color: #3b6ca8; /* Deep Navy */
 }
 
 /* --- Page Wrapper (Now just a structural container) --- */
@@ -26,7 +56,7 @@ h1, h2, h3, h4 {
     width: 100%; /* Ensure it takes full width */
 }
 
-/* --- Sticky Header (Full-Width Style) --- */
+/* --- Sticky Header (ISW Professional Style) --- */
 .sticky-header {
     position: sticky;
     top: 0;
@@ -35,44 +65,75 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #8b0000;
-    border-top: 5px solid #152e4d;
+    
+    /* 1. Thick dark navy borders on top and bottom like ISW */
+    border-top: 18px solid #0a2240;
+    border-bottom: 18px solid #0a2240;
+    
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 0 5%; /* ADDED PADDING to keep content off the edges */
+    padding: 0 5%; 
+    height: 100px; /* Gives the white area some breathing room */
 }
 
 .logo-area {
-    padding: 15px 0; /* Removed side padding */
+    padding: 0;
 }
 
 .logo-area h1 {
-    font-size: 28px;
+    font-size: 36px;
+    color: #0a2240; /* ISW Navy Blue */
+    font-family: 'Libre Baskerville', Georgia, serif;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-decoration: underline;
+    text-decoration-color: #a10000;
 }
 
+.logo-area h1 .logo-red {
+    color: #a10000; /* A deep, professional red color */
+    text-decoration: underline;
+    text-decoration-color: #0a2240;
+}
 .main-nav {
     display: flex;
-    background-color: #152e4d;
-    height: 100%;
+    align-items: center;
+    background-color: transparent; /* Removes the dark blue block behind links */
+    height: auto;
 }
 
 .main-nav a {
-    color: #ffffff;
-    padding: 25px 20px;
+    color: #0a2240; /* Links are now dark blue text */
+    padding: 10px 18px;
     font-size: 13px;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-decoration: none;
-    border-left: 1px solid #2a4768;
+    border-left: none; /* Removes the dividing lines */
+    transition: color 0.3s;
+}
+
+/* 2. Clean hover effect (changes text color instead of background) */
+.main-nav a:hover, .main-nav a.active {
+    background-color: transparent;
+    color: #3b6b9e; /* Lighter blue on hover */
+}
+
+/* 3. Make the Login button look like a professional action button */
+.main-nav a.nav-right {
+    margin-left: 20px;
+    background-color: #0a2240 !important;
+    color: #df1515 !important;
+    font-weight: 900;
+    border-radius: 3px;
+    padding: 10px 25px;
     transition: background 0.3s;
 }
 
-.main-nav a:hover, .main-nav a.active {
-    background-color: #2a4768;
+.main-nav a.nav-right:hover {
+    background-color: #051324 !important;
 }
-
 /* --- Main Content --- */
 .content-area {
     padding: 40px 5%; /* Use percentage for responsive side padding */
@@ -87,7 +148,6 @@ h1, h2, h3, h4 {
 .section-title {
     font-size: 20px;
     text-transform: uppercase;
-    border-bottom: 2px solid #152e4d;
     padding-bottom: 5px;
     margin-bottom: 30px;
 }
@@ -96,22 +156,20 @@ h1, h2, h3, h4 {
 /* --- 1. Vanta.js Interactive Globe Section --- */
 .vanta-globe-section {
     width: 100%;
-    height: 450px; /* Makes the globe area large and impressive */
+    height: 450px; 
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 4px solid #8b0000; /* Dark red border to separate from white content below */
-    overflow: hidden; /* Prevents scrollbars from 3D canvas */
+    overflow: hidden; 
 }
 
-/* Keeps the text perfectly centered on top of the globe */
 .vanta-content {
     position: relative;
     z-index: 10;
     text-align: center;
-    pointer-events: none; /* Lets the user click/drag the globe through the text */
+    pointer-events: none;
 }
 .globe-container {
     width: 300px;
@@ -133,6 +191,35 @@ h1, h2, h3, h4 {
 }
 
 /* --- 2. Major Ongoing Wars Grid --- */
+/* --- New Ribbon Banner Styling --- */
+.ribbon-banner {
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    padding: 30px 50px;
+    margin: 40px auto 30px auto; /* Reduced bottom margin */
+    text-align: center;
+    position: relative;
+    max-width: 900px;
+    
+    /* The ribbon shape */
+    clip-path: polygon(0% 50%, 5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%);
+}
+
+.ribbon-banner h2 {
+    color: #cdaa7d; /* A professional gold/tan color for the text */
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    border: none; /* Removes the old underline */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
 .ongoing-wars-section {
     max-width: 1200px; /* Optional: Keep this section from getting too wide on huge screens */
     margin: 0 auto; /* Center the grid container */
@@ -151,42 +238,75 @@ h1, h2, h3, h4 {
 }
 
 .war-map-circle {
-    width: 120px;
-    height: 120px;
+    width: 200px;           /* Ensure size is sufficient */
+    height: 200px;
     margin: 0 auto 15px auto;
     border-radius: 50%;
-    border: 3px solid #152e4d;
-    background-size: cover;
+    border: 2px solid #152e4d;
+    
+    /* THE FIXES */
+    background-color: #cccccc; /* This will show grey if the image fails */
+    background-size: cover;    /* This forces the map to fit inside the circle */
     background-position: center;
+    background-repeat: no-repeat;
+    display: block;            /* Ensures it takes up space */
 }
 
+/* --- Glassmorphism for Dropdown Buttons --- */
 .war-dropdown-btn {
-    background: #152e4d;
+    background: rgba(10, 34, 64, 0.6); /* Semi-transparent Navy */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
     color: white;
-    border: none;
-    padding: 8px 15px;
+    padding: 10px 15px;
     font-family: 'Libre Baskerville', serif;
     font-size: 14px;
     cursor: pointer;
     width: 100%;
     margin-bottom: 10px;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
+.war-dropdown-btn:hover {
+    background: rgba(10, 34, 64, 0.9); /* Darkens slightly on hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- Glassmorphism for the Dropdown Menu itself --- */
 .war-menu {
     list-style: none;
     text-align: left;
-    padding: 10px;
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    /* Hidden by default, toggled via JS */
-    display: none; 
+    padding: 15px;
+    
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    
+    display: none; /* Keep hidden by default */
 }
 
-.war-menu li { margin-bottom: 8px; }
-.war-menu a { color: #8b0000; font-size: 13px; font-weight: bold; text-decoration: none; }
-.war-menu a:hover { text-decoration: underline; }
+.war-menu li { margin-bottom: 10px; }
+.war-menu li:last-child { margin-bottom: 0; }
 
-/* --- 3. Statistics Data Bar --- */
+.war-menu a { 
+    color: #ffffff; /* Crisp white text */
+    font-size: 14px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+
+.war-menu a:hover { 
+    color: #ff9999; /* Turns soft red on hover */
+    text-decoration: none; 
+}
 .stats-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -196,40 +316,60 @@ h1, h2, h3, h4 {
     margin: 40px 0;
 }
 
+/* --- 3. Statistics Data Bar (Glass Effect) --- */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blurs the waves behind it! */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
 .stat-box {
     padding: 20px;
     text-align: center;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .stat-box:last-child { border-right: none; }
 
 .stat-box h4 {
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    color: #666;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    color: #e0e0e0; /* Light grey */
 }
 
 .stat-number {
     font-size: 24px;
     font-weight: bold;
-    color: #8b0000;
+    color: #ff6b6b; /* Bright red so it pops on dark background */
     font-family: 'Libre Baskerville', serif;
 }
 
 /* --- 4 & 5. Info Boxes (News & About) --- */
 .report-box {
-    border: 1px solid #ccc;
-    padding: 25px;
-    background: #ffffff;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    /* Very transparent white background allows waves to show through */
+    background: rgba(255, 255, 255, 0.08); 
+    
+    /* The blur is what creates the "frosted glass" look */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); /* For Safari support */
+    
+    /* Sharp, clean borders to define the glass edges */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.4); /* Highlight edge */
+    border-left: 1px solid rgba(255, 255, 255, 0.4); /* Highlight edge */
+    
+    padding: 30px;
+    border-radius: 12px; /* Smoother corners for modern look */
     margin-bottom: 30px;
-    max-width: 1200px; /* Optional: Keep this section from getting too wide */
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Soft shadow beneath the glass */
+    
+    /* Force all standard text inside to be bright white */
+    color: #ffffff; 
 }
 
+/* Ensure paragraph text is bright and readable */
+.report-box p, 
 .box-title {
     font-size: 16px;
     margin-bottom: 15px;
@@ -237,19 +377,27 @@ h1, h2, h3, h4 {
     border-bottom: 1px dotted #ccc;
 }
 
-.news-list { list-style: none; }
+.report-box a { 
+    color: #ffffff !important; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.report-box a:hover {
+    color: #ff9999 !important; /* Turns red on hover to show it's clickable */
+}
+
+/* Fix the divider lines in the News List */
 .news-list li {
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Semi-transparent white line */
     font-size: 14px;
+    color: #ffffff;
 }
-.news-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-.about-text {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #444;
+.about-text { 
+    color: #ffffff !important; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Helps text pop against waves */
 }
 
 /* --- Forum Page Specific Styles --- */
@@ -270,4 +418,129 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
     font-size: 15px;
     color: #444;
+}
+/* =========================================
+   WAR OVERVIEW PAGE STYLES
+   ========================================= */
+.overview-page {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.sticky-sidebar {
+    position: sticky;
+    top: 130px; /* Adjust based on your header's height */
+    width: 220px;
+    flex-shrink: 0;
+    
+    /* Glassmorphism for the sidebar */
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sticky-sidebar h4 {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sticky-sidebar ul {
+    list-style: none;
+}
+
+.sticky-sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.sticky-sidebar ul li a:hover {
+    color: #ff9999;
+}
+
+.overview-content {
+    flex-grow: 1; /* Takes up the remaining space */
+}
+
+.overview-title {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.overview-subtitle {
+    font-size: 16px;
+    color: #e0e0e0;
+    font-style: italic;
+}
+
+/* --- Interactive Image Gallery --- */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* --- The Modal (background) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
 }

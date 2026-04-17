@@ -6,16 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Global Vanta Waves Background -->
+    <div id="vanta-bg-global"></div>
+    
     <div class="page-wrapper">
         <!-- Sticky Header Shared Across Pages -->
         <header class="sticky-header">
-            <div class="logo-area"><h1>WarWatch</h1></div>
+            <div class="logo-area">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+            </div>
             <nav class="main-nav">
                 <a href="index.html">Dashboard</a>
                 <a href="news.html">News Headlines</a>
                 <a href="map.html">Impact Map</a>
-                <a href="forum.html">Public Forum</a>
-                <a href="about.html" class="active nav-right">About Us</a>
+                <a href="forum.php">Public Forum</a> 
+                <a href="about.html">About Us</a>
+                <a href="login.html" class="nav-right" style="background-color: red; border-left: none;">Login</a>
             </nav>
         </header>
 
@@ -31,5 +37,12 @@
             </div>
         </main>
     </div>
+<!-- Three.js (Required for Vanta) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- Vanta.js Waves Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    
+    <!-- Your custom script -->
+    <script src="script.js"></script>
 </body>
 </html>

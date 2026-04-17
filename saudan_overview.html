@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview: Saudan War | WarWatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Global Vanta Waves Background -->
+    <div id="vanta-bg-global"></div>
+
+    <div class="page-wrapper">
+        <!-- HEADER -->
+        <header class="sticky-header">
+            <div class="logo-area"><h1>WAR<span class="logo-red">WATCH</span></h1></div>
+            <nav class="main-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="news.html">News</a>
+                <a href="map.html">Map</a>
+                <a href="forum.php">Forum</a>
+                <a href="about.html">About</a>
+                <a href="login.html" class="nav-right">Login</a>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="content-area overview-page">
+            <!-- Sticky Sidebar -->
+            <aside class="sticky-sidebar">
+                <h4>Intel Briefing</h4>
+                <ul>
+                    <li><a href="#history">Conflict History</a></li>
+                    <li><a href="#gallery">Image Gallery</a></li>
+                    <li><a href="#situation">Current Situation</a></li>
+                </ul>
+            </aside>
+
+            <!-- Page Content -->
+            <div class="overview-content">
+                <div class="report-box">
+                    <h1 class="overview-title">Russia-Ukraine War</h1>
+                    <p class="overview-subtitle">An ongoing and protracted conflict that began in February 2014, escalating into a full-scale invasion in February 2022.</p>
+                </div>
+
+                <!-- 1. Conflict History -->
+                <section id="history" class="report-box">
+                    <h2 class="section-title">Conflict History</h2>
+                    <p>The conflict originated in 2014 following the Ukrainian Revolution of Dignity, focusing on the status of Crimea and parts of the Donbas, internationally recognized as part of Ukraine. After years of simmering conflict, Russia launched a full-scale invasion, marking a major escalation and creating Europe's largest refugee crisis since World War II. The invasion has been met with widespread international condemnation, sanctions against Russia, and significant military assistance for Ukraine.</p>
+                </section>
+
+                <!-- 2. Interactive Image Gallery -->
+                <section id="gallery" class="report-box">
+                    <h2 class="section-title">Image Gallery</h2>
+                    <div class="image-grid">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Battle_of_Trostyanets_-_NLAW_and_tank.jpg/640px-Battle_of_Trostyanets_-_NLAW_and_tank.jpg" alt="Ukrainian forces with captured Russian equipment" onclick="openModal(this)">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg/640px-Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg" alt="Destroyed Mariupol Drama Theater" onclick="openModal(this)">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bakhmut_in_May_2023.jpg/640px-Bakhmut_in_May_2023.jpg" alt="Cityscape of Bakhmut after intense fighting" onclick="openModal(this)">
+                    </div>
+                </section>
+
+                <!-- 3. Current Situation -->
+                <section id="situation" class="report-box">
+                    <h2 class="section-title">Current Situation</h2>
+                    <p>As of late 2024, the conflict is characterized by a war of attrition along a vast front line in eastern and southern Ukraine. Both sides are heavily reliant on artillery, drone warfare, and fortified defensive positions. Key strategic objectives include control over critical infrastructure and logistical hubs. The international community continues to play a pivotal role, with ongoing debates about the scale and nature of military and financial support for Ukraine's defense efforts.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- The Modal (Full-screen image viewer) -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
