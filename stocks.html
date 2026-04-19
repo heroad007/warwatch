@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Analysis | WarWatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Global Vanta Waves Background -->
+    <div id="vanta-bg-global"></div>
+    
+    <div class="page-wrapper">
+        <header class="sticky-header">
+            <div class="logo-area">
+                <a href="index.html" style="text-decoration: none; display: inline-block;">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="news.html">News Headlines</a>
+                <a href="map.html">Impact Map</a>
+                <a href="forum.php">Public Forum</a> 
+                <a href="about.html">About Us</a>
+                <a href="stocks.html">Market Analysis</a>
+                <a href="login.html" class="nav-right" style="background-color: #a30707; border-left: none;">Login</a>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <h2 class="section-title">Geopolitical Market Impact Analysis</h2>
+            
+            <div class="report-box" style="margin-bottom: 40px;">
+                <p class="about-text">
+                    This dashboard tracks the economic impact of global conflicts on key market sectors. The data presented is a real-time simulation, illustrating how stock values react to geopolitical events. Use the prediction tool to model potential outcomes based on various conflict scenarios.
+                </p>
+            </div>
+
+            <!-- Stock Grid -->
+<div class="stock-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+    <!-- === US & EUROPEAN STOCKS === -->
+    <div class="report-box">
+        <h3>Lockheed Martin (LMT) - US Defense</h3>
+        <div class="stock-price" id="stock-price-lmt">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $355.41</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-lmt" onchange="updatePrediction('lmt')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="escalation">Major Conflict Escalation</option>
+            <option value="ceasefire">Ceasefire Agreement</option>
+        </select>
+        <div class="prediction-result" id="prediction-lmt">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>ExxonMobil (XOM) - US Energy</h3>
+        <div class="stock-price" id="stock-price-xom">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $75.22</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-xom" onchange="updatePrediction('xom')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="supply_disruption">Supply Chain Disruption</option>
+            <option value="market_open">New Markets Open</option>
+        </select>
+        <div class="prediction-result" id="prediction-xom">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>NVIDIA (NVDA) - US Tech</h3>
+        <div class="stock-price" id="stock-price-nvda">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $272.47</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-nvda" onchange="updatePrediction('nvda')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="ai_arms_race">AI Arms Race Intensifies</option>
+            <option value="export_controls">New Chip Export Controls</option>
+        </select>
+        <div class="prediction-result" id="prediction-nvda">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>Shell plc (SHEL) - EU Energy</h3>
+        <div class="stock-price" id="stock-price-shel">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $48.15</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-shel" onchange="updatePrediction('shel')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="energy_crisis">European Energy Crisis</option>
+            <option value="green_transition">Green Transition Accelerates</option>
+        </select>
+        <div class="prediction-result" id="prediction-shel">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>Maersk (AMKBY) - Global Shipping</h3>
+        <div class="stock-price" id="stock-price-maersk">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $18.50</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-maersk" onchange="updatePrediction('maersk')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="red_sea_closure">Red Sea Disruption</option>
+            <option value="trade_boom">Global Trade Boom</option>
+        </select>
+        <div class="prediction-result" id="prediction-maersk">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>S&P 500 Index (SPY)</h3>
+        <div class="stock-price" id="stock-price-spy">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> $477.71</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-spy" onchange="updatePrediction('spy')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="recession">Global Recession Fears</option>
+            <option value="stability">Geopolitical Stability</option>
+        </select>
+        <div class="prediction-result" id="prediction-spy">Select a scenario to model future value.</div>
+    </div>
+
+    <!-- === INDIAN STOCKS === -->
+    <div class="report-box">
+        <h3>Hindustan Aeronautics (HAL) - IN Defense</h3>
+        <div class="stock-price" id="stock-price-hal">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> ₹1,235.00</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-hal" onchange="updatePrediction('hal')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="border_tension">Regional Border Tensions</option>
+            <option value="export_deal">Major Export Deal Signed</option>
+        </select>
+        <div class="prediction-result" id="prediction-hal">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>Reliance Industries (RELIANCE) - IN Energy</h3>
+        <div class="stock-price" id="stock-price-reliance">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> ₹2,370.00</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-reliance" onchange="updatePrediction('reliance')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="oil_surge">Global Oil Price Surge</option>
+            <option value="global_slowdown">Global Economic Slowdown</option>
+        </select>
+        <div class="prediction-result" id="prediction-reliance">Select a scenario to model future value.</div>
+    </div>
+
+    <div class="report-box">
+        <h3>Tata Consultancy (TCS) - IN IT Services</h3>
+        <div class="stock-price" id="stock-price-tcs">Loading...</div>
+        <p class="stock-info"><strong>Pre-War Value (Jan '22):</strong> ₹3,855.00</p>
+        <hr class="stock-divider">
+        <h4>Prediction Scenario:</h4>
+        <select id="scenario-tcs" onchange="updatePrediction('tcs')">
+            <option value="status_quo">Current Trajectory</option>
+            <option value="budget_cuts">Global IT Budget Cuts</option>
+            <option value="strong_dollar">Stronger Dollar Boosts Revenue</option>
+        </select>
+        <div class="prediction-result" id="prediction-tcs">Select a scenario to model future value.</div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="script.js?v=1"></script>
+</body>
+</html>

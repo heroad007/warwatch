@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/*.jpg": true,
+        "**/*.jpeg": true,
+        "**/*.png": true,
+        "**/*.gif": true,
+        "**/*.bmp": true,
+        "**/*.svg": true,
+        "**/*.ico": true,
+        "**/*.webp": true
+    }
+}</content>
+<parameter name="filePath">c:\xampp\htdocs\warwatch\.vscode\settings.json

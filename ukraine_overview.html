@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Overview: Russia-Ukraine War | WarWatch</title>
+    <title>Overview: Russo-Ukrainian War | WarWatch</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Small addition to make the long text look like a proper dossier */
+        .briefing-text {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+        .briefing-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .briefing-list li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Global Vanta Waves Background -->
@@ -13,7 +30,11 @@
     <div class="page-wrapper">
         <!-- HEADER -->
         <header class="sticky-header">
-            <div class="logo-area"><h1>WAR<span class="logo-red">WATCH</span></h1></div>
+            <div class="logo-area">
+                <a href="index.html" style="text-decoration: none; display: inline-block;">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+                </a>
+            </div>
             <nav class="main-nav">
                 <a href="index.html">Dashboard</a>
                 <a href="news.html">News</a>
@@ -30,7 +51,9 @@
             <aside class="sticky-sidebar">
                 <h4>Intel Briefing</h4>
                 <ul>
-                    <li><a href="#history">Conflict History</a></li>
+                    <li><a href="#summary">Executive Summary</a></li>
+                    <li><a href="#history">Conflict Background (2014)</a></li>
+                    <li><a href="#invasion">Full-Scale Invasion (2022)</a></li>
                     <li><a href="#gallery">Image Gallery</a></li>
                     <li><a href="#situation">Current Situation</a></li>
                 </ul>
@@ -38,31 +61,59 @@
 
             <!-- Page Content -->
             <div class="overview-content">
-                <div class="report-box">
-                    <h1 class="overview-title">Russia-Ukraine War</h1>
-                    <p class="overview-subtitle">An ongoing and protracted conflict that began in February 2014, escalating into a full-scale invasion in February 2022.</p>
-                </div>
+                
+                <!-- Title Block -->
+                <section id="summary" class="report-box">
+                    <h1 class="overview-title">Russia-Ukrainian War</h1>
+                    <p class="overview-subtitle">An ongoing and protracted conflict that began in February 2014, escalating into a full-scale invasion of Ukraine by Russia in February 2022.</p>
+                </section>
 
-                <!-- 1. Conflict History -->
+                <!-- 1. Background / History -->
                 <section id="history" class="report-box">
-                    <h2 class="section-title">Conflict History</h2>
-                    <p>The conflict originated in 2014 following the Ukrainian Revolution of Dignity, focusing on the status of Crimea and parts of the Donbas, internationally recognized as part of Ukraine. After years of simmering conflict, Russia launched a full-scale invasion, marking a major escalation and creating Europe's largest refugee crisis since World War II. The invasion has been met with widespread international condemnation, sanctions against Russia, and significant military assistance for Ukraine.</p>
+                    <h2 class="section-title">Conflict Background (2014–2021)</h2>
+                    <p class="briefing-text">
+                        The conflict originated in early 2014, following the <strong>Revolution of Dignity</strong> (Euromaidan) in Ukraine. Protests erupted when Ukrainian President Viktor Yanukovych suspended preparations for an association agreement with the European Union in favor of closer ties with Russia. After Yanukovych was ousted in February 2014, pro-Russian unrest broke out in eastern and southern Ukraine.
+                    </p>
+                    <p class="briefing-text">
+                        In March 2014, Russian troops disguised as "little green men" covertly invaded and <strong>annexed the Crimean Peninsula</strong>. Shortly after, Russian-backed separatists declared the independence of the Donetsk and Luhansk People's Republics in the Donbas region, sparking the War in Donbas.
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Minsk Agreements:</strong> Attempts to establish a ceasefire, including Minsk I (2014) and Minsk II (2015), were largely unsuccessful, resulting in a low-intensity, static trench war that lasted for eight years.</li>
+                        <li><strong>Pre-Invasion Buildup:</strong> Throughout 2021 and early 2022, Russia amassed a massive military presence along the Ukrainian border while issuing demands, including a guarantee that Ukraine would never join NATO.</li>
+                    </ul>
                 </section>
 
-                <!-- 2. Interactive Image Gallery -->
-                <section id="gallery" class="report-box">
-                    <h2 class="section-title">Image Gallery</h2>
-                    <div class="image-grid">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Battle_of_Trostyanets_-_NLAW_and_tank.jpg/640px-Battle_of_Trostyanets_-_NLAW_and_tank.jpg" alt="Ukrainian forces with captured Russian equipment" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg/640px-Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg" alt="Destroyed Mariupol Drama Theater" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bakhmut_in_May_2023.jpg/640px-Bakhmut_in_May_2023.jpg" alt="Cityscape of Bakhmut after intense fighting" onclick="openModal(this)">
-                    </div>
+                <!-- 2. Full-Scale Invasion -->
+                <section id="invasion" class="report-box">
+                    <h2 class="section-title">Full-Scale Invasion (Feb 2022)</h2>
+                    <p class="briefing-text">
+                        On February 24, 2022, Russia launched a full-scale invasion of Ukraine, referred to by Russian President Vladimir Putin as a "special military operation." The initial assault targeted the capital, Kyiv, as well as multiple fronts in the south and east.
+                    </p>
+                    <p class="briefing-text">
+                        The Ukrainian Armed Forces heavily resisted the invasion. By April 2022, Russian forces retreated from the Kyiv region following severe logistical failures and heavy casualties. Later that year, successful Ukrainian counteroffensives liberated significant territories in the Kharkiv region and pushed Russian forces out of the city of Kherson.
+                    </p>
                 </section>
 
-                <!-- 3. Current Situation -->
+             <section id="gallery" class="report-box">
+         <h2 class="section-title">Intelligence & Image Gallery</h2>
+    <div class="image-grid">
+        <img src="uk1.jpg" alt="Description of War 1" onclick="openModal(this)">
+        <img src="uk2.jpg" alt="Description of War 2" onclick="openModal(this)">
+        <img src="uk3.jpg" alt="Description of War 3" onclick="openModal(this)">
+        <img src="uk4.jpg" alt="Description of War 4" onclick="openModal(this)">
+    </div>
+</section>
+                <!-- 4. Current Situation -->
                 <section id="situation" class="report-box">
-                    <h2 class="section-title">Current Situation</h2>
-                    <p>As of late 2024, the conflict is characterized by a war of attrition along a vast front line in eastern and southern Ukraine. Both sides are heavily reliant on artillery, drone warfare, and fortified defensive positions. Key strategic objectives include control over critical infrastructure and logistical hubs. The international community continues to play a pivotal role, with ongoing debates about the scale and nature of military and financial support for Ukraine's defense efforts.</p>
+                    <h2 class="section-title">Current Situation & Global Impact</h2>
+                    <p class="briefing-text">
+                        As of the current reporting period, the war has devolved into a grueling war of attrition along a heavily fortified, 1,000-kilometer front line. Both militaries are heavily utilizing <strong>artillery, advanced drone warfare (UAVs), and electronic warfare</strong>. 
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Humanitarian Crisis:</strong> The invasion caused Europe's largest refugee crisis since World War II, with over 8 million Ukrainians fleeing the country and millions more internally displaced. Tens of thousands of civilians have been killed.</li>
+                        <li><strong>International Response:</strong> The West has imposed historically severe economic sanctions on Russia. A coalition of nations led by the United States and the EU continues to supply Ukraine with significant military aid, including HIMARS, Patriot air defense systems, and F-16 fighter jets.</li>
+                        <li><strong>Global Security Realignment:</strong> The conflict triggered a massive geopolitical shift, prompting Sweden and Finland to join NATO and fundamentally altering global energy and grain markets.</li>
+                    </ul>
                 </section>
             </div>
         </main>

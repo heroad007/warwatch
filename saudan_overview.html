@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Overview: Saudan War | WarWatch</title>
+    <title>Overview: Sudanese Civil War | WarWatch</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS to make the text look like a proper intelligence dossier */
+        .briefing-text {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+        .briefing-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .briefing-list li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Global Vanta Waves Background -->
@@ -13,7 +30,11 @@
     <div class="page-wrapper">
         <!-- HEADER -->
         <header class="sticky-header">
-            <div class="logo-area"><h1>WAR<span class="logo-red">WATCH</span></h1></div>
+            <div class="logo-area">
+                <a href="index.html" style="text-decoration: none; display: inline-block;">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+                </a>
+            </div>
             <nav class="main-nav">
                 <a href="index.html">Dashboard</a>
                 <a href="news.html">News</a>
@@ -30,39 +51,71 @@
             <aside class="sticky-sidebar">
                 <h4>Intel Briefing</h4>
                 <ul>
-                    <li><a href="#history">Conflict History</a></li>
+                    <li><a href="#summary">Executive Summary</a></li>
+                    <li><a href="#history">Political Background</a></li>
+                    <li><a href="#outbreak">Outbreak of War (2023)</a></li>
                     <li><a href="#gallery">Image Gallery</a></li>
-                    <li><a href="#situation">Current Situation</a></li>
+                    <li><a href="#situation">Humanitarian Crisis</a></li>
                 </ul>
             </aside>
 
             <!-- Page Content -->
             <div class="overview-content">
-                <div class="report-box">
-                    <h1 class="overview-title">Russia-Ukraine War</h1>
-                    <p class="overview-subtitle">An ongoing and protracted conflict that began in February 2014, escalating into a full-scale invasion in February 2022.</p>
-                </div>
+                
+                <!-- Title Block -->
+                <section id="summary" class="report-box">
+                    <h1 class="overview-title">Sudanese Civil War</h1>
+                    <p class="overview-subtitle">An ongoing armed conflict that erupted in April 2023 between the Sudanese Armed Forces (SAF) and the paramilitary Rapid Support Forces (RSF), devastating the nation.</p>
+                </section>
 
-                <!-- 1. Conflict History -->
+                <!-- 1. Background / History -->
                 <section id="history" class="report-box">
-                    <h2 class="section-title">Conflict History</h2>
-                    <p>The conflict originated in 2014 following the Ukrainian Revolution of Dignity, focusing on the status of Crimea and parts of the Donbas, internationally recognized as part of Ukraine. After years of simmering conflict, Russia launched a full-scale invasion, marking a major escalation and creating Europe's largest refugee crisis since World War II. The invasion has been met with widespread international condemnation, sanctions against Russia, and significant military assistance for Ukraine.</p>
+                    <h2 class="section-title">Political Background (2019–2023)</h2>
+                    <p class="briefing-text">
+                        The roots of the current war lie in the complex power struggles following the 2019 Sudanese Revolution, which overthrew longtime dictator Omar al-Bashir. Following the revolution, a fragile joint civilian-military transitional government was established.
+                    </p>
+                    <p class="briefing-text">
+                        In October 2021, the military and paramilitary forces collaborated in a coup d'état to oust the civilian leadership. The two main figures of this junta were <strong>General Abdel Fattah al-Burhan</strong> (commander of the Sudanese Armed Forces) and <strong>Mohamed Hamdan Dagalo, known as "Hemedti"</strong> (commander of the Rapid Support Forces).
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Rising Tensions:</strong> By late 2022, international pressure pushed for a return to civilian rule. A key requirement was the integration of the RSF into the regular armed forces.</li>
+                        <li><strong>The Breaking Point:</strong> Al-Burhan and Hemedti fiercely disagreed over the timeline of this integration and who would retain ultimate command, leading to a massive military buildup by the RSF in Khartoum and other cities in early April 2023.</li>
+                    </ul>
                 </section>
 
-                <!-- 2. Interactive Image Gallery -->
-                <section id="gallery" class="report-box">
-                    <h2 class="section-title">Image Gallery</h2>
-                    <div class="image-grid">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Battle_of_Trostyanets_-_NLAW_and_tank.jpg/640px-Battle_of_Trostyanets_-_NLAW_and_tank.jpg" alt="Ukrainian forces with captured Russian equipment" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg/640px-Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg" alt="Destroyed Mariupol Drama Theater" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bakhmut_in_May_2023.jpg/640px-Bakhmut_in_May_2023.jpg" alt="Cityscape of Bakhmut after intense fighting" onclick="openModal(this)">
-                    </div>
+                <!-- 2. Outbreak & Escalation -->
+                <section id="outbreak" class="report-box">
+                    <h2 class="section-title">Outbreak of War (April 2023)</h2>
+                    <p class="briefing-text">
+                        On the morning of April 15, 2023, heavy urban combat broke out in the capital city of Khartoum and across the country. The RSF launched sudden attacks on key government installations, military bases, and the presidential palace. 
+                    </p>
+                    <p class="briefing-text">
+                        Unlike previous Sudanese conflicts that were localized in peripheral regions (like Darfur), this war turned the densely populated capital into an active warzone. The SAF relied heavily on its air force superiority to bomb RSF positions in residential areas, while the RSF utilized highly mobile ground tactics to embed themselves within the city infrastructure. The conflict quickly spread west into the Darfur and Kordofan regions.
+                    </p>
                 </section>
 
-                <!-- 3. Current Situation -->
+                <!-- 3. Interactive Image Gallery -->
+   <section id="gallery" class="report-box">
+         <h2 class="section-title">Intelligence & Image Gallery</h2>
+    <div class="image-grid">
+        <img src="su1.jpg" alt="Description of War 1" onclick="openModal(this)">
+        <img src="su2.jpg" alt="Description of War 2" onclick="openModal(this)">
+        <img src="su3.jpg" alt="Description of War 3" onclick="openModal(this)">
+        <img src="su4.jpg" alt="Description of War 4" onclick="openModal(this)">
+    </div>
+</section>
+
+                <!-- 4. Current Situation -->
                 <section id="situation" class="report-box">
-                    <h2 class="section-title">Current Situation</h2>
-                    <p>As of late 2024, the conflict is characterized by a war of attrition along a vast front line in eastern and southern Ukraine. Both sides are heavily reliant on artillery, drone warfare, and fortified defensive positions. Key strategic objectives include control over critical infrastructure and logistical hubs. The international community continues to play a pivotal role, with ongoing debates about the scale and nature of military and financial support for Ukraine's defense efforts.</p>
+                    <h2 class="section-title">Current Situation & Humanitarian Crisis</h2>
+                    <p class="briefing-text">
+                        The conflict has plunged Sudan into one of the most severe humanitarian disasters in modern history. Peace talks hosted in Jeddah by the US and Saudi Arabia have repeatedly stalled, with multiple ceasefire agreements broken by both sides within hours.
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Mass Displacement:</strong> According to the UN, over 10 million people have been internally displaced, making it the largest internal displacement crisis globally. Millions more have fled as refugees to neighboring Chad, Egypt, and South Sudan.</li>
+                        <li><strong>Ethnic Cleansing in Darfur:</strong> The war has reignited ethnic violence in Darfur. The RSF and allied Arab militias have been accused of conducting systematic massacres and ethnic cleansing against non-Arab groups, particularly the Masalit people.</li>
+                        <li><strong>Famine & Infrastructure Collapse:</strong> The healthcare system in conflict zones has completely collapsed. Aid agencies warn of catastrophic, widespread famine as agricultural supply chains and food imports have been deliberately disrupted by the fighting.</li>
+                    </ul>
                 </section>
             </div>
         </main>

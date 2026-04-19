@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Overview: Iran-Israel War | WarWatch</title>
+    <title>Overview: Iran-Israel Conflict | WarWatch</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS to make the text look like a proper intelligence dossier */
+        .briefing-text {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+        .briefing-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .briefing-list li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Global Vanta Waves Background -->
@@ -13,7 +30,9 @@
     <div class="page-wrapper">
         <!-- HEADER -->
         <header class="sticky-header">
-            <div class="logo-area"><h1>WAR<span class="logo-red">WATCH</span></h1></div>
+           <a href="index.html" style="text-decoration: none; display: inline-block;">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+            </a>
             <nav class="main-nav">
                 <a href="index.html">Dashboard</a>
                 <a href="news.html">News</a>
@@ -30,39 +49,69 @@
             <aside class="sticky-sidebar">
                 <h4>Intel Briefing</h4>
                 <ul>
-                    <li><a href="#history">Conflict History</a></li>
+                    <li><a href="#summary">Executive Summary</a></li>
+                    <li><a href="#tactics">Strategic Tactics</a></li>
+                    <li><a href="#proxies">Axis of Resistance</a></li>
                     <li><a href="#gallery">Image Gallery</a></li>
-                    <li><a href="#situation">Current Situation</a></li>
+                    <li><a href="#escalation">Recent Escalations</a></li>
                 </ul>
             </aside>
 
             <!-- Page Content -->
             <div class="overview-content">
-                <div class="report-box">
-                    <h1 class="overview-title">Russia-Ukraine War</h1>
-                    <p class="overview-subtitle">An ongoing and protracted conflict that began in February 2014, escalating into a full-scale invasion in February 2022.</p>
-                </div>
-
-                <!-- 1. Conflict History -->
-                <section id="history" class="report-box">
-                    <h2 class="section-title">Conflict History</h2>
-                    <p>The conflict originated in 2014 following the Ukrainian Revolution of Dignity, focusing on the status of Crimea and parts of the Donbas, internationally recognized as part of Ukraine. After years of simmering conflict, Russia launched a full-scale invasion, marking a major escalation and creating Europe's largest refugee crisis since World War II. The invasion has been met with widespread international condemnation, sanctions against Russia, and significant military assistance for Ukraine.</p>
+                
+                <!-- Title Block -->
+                <section id="summary" class="report-box">
+                    <h1 class="overview-title">Iran–Israel Conflict</h1>
+                    <p class="overview-subtitle">A decades-long geopolitical struggle characterized by covert operations, cyber warfare, and proxy militia conflicts across the Middle East.</p>
                 </section>
 
-                <!-- 2. Interactive Image Gallery -->
-                <section id="gallery" class="report-box">
-                    <h2 class="section-title">Image Gallery</h2>
-                    <div class="image-grid">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Battle_of_Trostyanets_-_NLAW_and_tank.jpg/640px-Battle_of_Trostyanets_-_NLAW_and_tank.jpg" alt="Ukrainian forces with captured Russian equipment" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg/640px-Mariupol_drama_theater_after_the_bombing_in_2022_%285%29.jpg" alt="Destroyed Mariupol Drama Theater" onclick="openModal(this)">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Bakhmut_in_May_2023.jpg/640px-Bakhmut_in_May_2023.jpg" alt="Cityscape of Bakhmut after intense fighting" onclick="openModal(this)">
-                    </div>
+                <!-- 1. Strategic Background / Tactics -->
+                <section id="tactics" class="report-box">
+                    <h2 class="section-title">Strategic Background & Tactics</h2>
+                    <p class="briefing-text">
+                        Following the 1979 Iranian Revolution, hostility toward Israel became a core pillar of Iran's foreign policy. Because the two nations do not share a direct border, they have historically engaged in a "shadow war" utilizing indirect military strategies rather than conventional warfare.
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Israeli Strategy:</strong> Focuses on preventing Iran from developing nuclear weapons and halting the transfer of advanced munitions to hostile militias. Tactics include covert assassinations of Iranian nuclear scientists, sophisticated cyberattacks (such as the Stuxnet worm), and regular airstrikes against Iranian assets in Syria.</li>
+                        <li><strong>Iranian Strategy:</strong> Aims to surround Israel with heavily armed non-state actors (proxies) to deter Israeli attacks on Iranian soil. Iran provides advanced weaponry, funding, and training to these groups via the Islamic Revolutionary Guard Corps (IRGC).</li>
+                    </ul>
                 </section>
 
-                <!-- 3. Current Situation -->
-                <section id="situation" class="report-box">
-                    <h2 class="section-title">Current Situation</h2>
-                    <p>As of late 2024, the conflict is characterized by a war of attrition along a vast front line in eastern and southern Ukraine. Both sides are heavily reliant on artillery, drone warfare, and fortified defensive positions. Key strategic objectives include control over critical infrastructure and logistical hubs. The international community continues to play a pivotal role, with ongoing debates about the scale and nature of military and financial support for Ukraine's defense efforts.</p>
+                <!-- 2. The Proxies -->
+                <section id="proxies" class="report-box">
+                    <h2 class="section-title">The "Axis of Resistance"</h2>
+                    <p class="briefing-text">
+                        Iran exerts its regional influence through a network of allied militant groups, collectively referred to by Tehran as the "Axis of Resistance." Key operational fronts include:
+                    </p>
+                    <ul class="briefing-list">
+                        <li><strong>Lebanon (Hezbollah):</strong> The most powerful Iranian proxy, possessing a massive arsenal of precision-guided missiles aimed directly at northern Israel.</li>
+                        <li><strong>Gaza Strip (Hamas & PIJ):</strong> Palestinian militant groups that receive significant financial and military backing from Iran to combat Israel directly.</li>
+                        <li><strong>Yemen (Houthis):</strong> A rebel group utilized to disrupt Red Sea shipping and launch long-range ballistic missiles toward southern Israel.</li>
+                        <li><strong>Syria & Iraq:</strong> Various Shia militias serving as a land bridge and logistical supply line for Iranian weapons transfers.</li>
+                    </ul>
+                </section>
+
+               <!-- 3. Interactive Image Gallery -->
+   <section id="gallery" class="report-box">
+         <h2 class="section-title">Intelligence & Image Gallery</h2>
+    <div class="image-grid">
+        <img src="is1.jpg" alt="Description of War 1" onclick="openModal(this)">
+        <img src="is2.jpg" alt="Description of War 2" onclick="openModal(this)">
+        <img src="is3.jpg" alt="Description of War 3" onclick="openModal(this)">
+        <img src="is4.jpg" alt="Description of War 4" onclick="openModal(this)">
+    </div>
+</section>
+
+                <!-- 4. Current Situation -->
+                <section id="escalation" class="report-box">
+                    <h2 class="section-title">Recent Escalations (2023–Present)</h2>
+                    <p class="briefing-text">
+                        The conflict dramatically escalated following the October 7, 2023 attacks by Hamas and the subsequent Israeli invasion of Gaza. This triggered a region-wide mobilization of Iranian proxies.
+                    </p>
+                    <p class="briefing-text">
+                        <strong>The End of the "Shadow War":</strong> In April 2024, following an Israeli airstrike on an Iranian diplomatic compound in Syria, Iran launched an unprecedented direct drone and missile attack from its own soil against Israel. This event marked a historic shift, moving the conflict out of the shadows and raising international fears of an all-out conventional regional war.
+                    </p>
                 </section>
             </div>
         </main>

@@ -3,6 +3,12 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: login.html"); // Redirect back to the login page
+
+// This script clears the LocalStorage (Browser Memory) 
+// before redirecting, so the "Aditya (Logout)" text disappears.
+echo "<script>
+        localStorage.removeItem('loggedInUser');
+        window.location.href = 'login.html';
+      </script>";
 exit();
 ?>

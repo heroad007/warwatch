@@ -35,7 +35,9 @@
         <!-- STICKY HEADER (Shared with index.html) -->
         <header class="sticky-header">
             <div class="logo-area">
-                <h1>WAR<span class="logo-red">WATCH</span></h1>            
+                <a href="index.html" style="text-decoration: none; display: inline-block;">
+                <h1>WAR<span class="logo-red">WATCH</span></h1>
+                </a>         
             </div>
             <nav class="main-nav">
                 <a href="index.html">Dashboard</a>
@@ -50,10 +52,6 @@
         <!-- MAIN CONTENT: THE MAP -->
         <main class="content-area">
             <h2 class="section-title">Global Conflict Impact Map</h2>
-            <p class="map-description">
-                Interactive tracking of major ongoing operational theaters. Click on the red markers to view verified intelligence, infrastructure damage estimates, and current status.
-            </p>
-
             <!-- This DIV is where Leaflet will draw the map -->
             <div id="conflictMap"></div>
 
@@ -69,39 +67,6 @@
     <!-- LEAFLET.JS JAVASCRIPT -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
-    <!-- Map Initialization Script (Fulfills Unit 2 JS requirements) -->
-   <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Unit 2: AJAX, JSON Parsing, and DOM Manipulation -->
-    <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Unit 2: Advanced AJAX, GeoJSON Parsing, and Array Mapping -->
-   <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- DEBUGGING JAVASCRIPT -->
-    <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- FINAL CORRECTED SCRIPT -->
-    <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- ULTIMATE DEBUGGER SCRIPT -->
-   <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- FINAL DEBUGGER SCRIPT TO REVEAL ALL COUNTRY NAMES -->
-    <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- DISCOVERY SCRIPT - This will reveal the correct property names -->
-    <!-- LEAFLET.JS JAVASCRIPT -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- FINAL WORKING SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var map = L.map('conflictMap').setView([30.0, 30.0], 2);
